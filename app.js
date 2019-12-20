@@ -8,12 +8,13 @@ geocode('Aspen, Colorado', (error, data) => {
     }
     console.log('data', data);
 
-    // weatherReport(data.longitude, data.latitude, (error, reportData) => {
-    //     if (error) {
-    //         return console.log(error)
-    //     }
-    //     console.log(reportData.location)
-    //     console.log("data", reportData);
-    // })
-
 })
+
+
+weatherReport( 20.9752, 77.8750, (error, reportData) => {
+    if (error) {
+        return console.log(error)
+    }
+    // console.log(reportData.location)
+    console.log("data", reportData);
+ })
