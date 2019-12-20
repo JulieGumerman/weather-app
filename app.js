@@ -3,11 +3,17 @@ const weatherReport = require('./utils/weatherReport')
 
 
 geocode('Aspen, Colorado', (error, data) => {
-    console.log('Error', error);
+    if (error) {
+        return console.log("Error yo!!!", error)
+    }
     console.log('data', data);
-    weatherReport(data.longitude, data.latitude, (error, data) => {
-        console.log("error", error); 
-        console.log("data", data);
-    })
+
+    // weatherReport(data.longitude, data.latitude, (error, reportData) => {
+    //     if (error) {
+    //         return console.log(error)
+    //     }
+    //     console.log(reportData.location)
+    //     console.log("data", reportData);
+    // })
 
 })
