@@ -6,13 +6,13 @@ const address = process.argv[2]
 if (!address) {
     console.log('Please provide an address')
 } else {
-    geocode(address, (error, data) => {
+    geocode(address, (error, {latitude, longitude, location}) => {
         if (error) {
             return console.log("Error yo!!!", error)
         }
-        console.log('data', data);
+        console.log('data', location);
         
-        weatherReport(data.latitude, data.longitude, data.place_name, (error, reportData) => {
+        weatherReport(latitude, longitude, (error, reportData) => {
             if (error) {
                 return console.log(error)
             } else {
